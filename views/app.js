@@ -98,5 +98,19 @@ app.AppView = Backbone.View.extend({
     app.Todos.create( this.newAttributes() );
     this.$input.val(''); 
   },
-  
+
+  clearCompleted: function() {
+    _.invoke(app.Todos.completed(), 'destroy');
+    return false; 
+  },
+
+  toggleAllComplete: function() {
+    var completed = this.allCheckbox.checked;
+    
+    app.Todos.each(function( todo ) { 
+      todo.save({
+        'completed': completed
+      });
+    }); 
+  }
 });
