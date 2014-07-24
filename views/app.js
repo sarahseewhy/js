@@ -11,6 +11,12 @@ app.AppView = Backbone.View.extend({
   // Our template for the line of statistics at the bottom of the app.
   statsTemplate: _.template( $('#stats-template').html() ),
 
+  events: {
+      'keypress #new-todo': 'createOnEnter',
+      'click #clear-completed': 'clearCompleted',
+      'click #toggle-all': 'toggleAllComplete'
+  },
+
   // At initialization we bind to the relevant events on the `Todos` 
   // collection, when items are added or changed.
   initialize: function () {
