@@ -80,4 +80,14 @@ app.AppView = Backbone.View.extend({
     todo.trigger('visible');
   },
 
+  filterAll : function () { 
+    app.Todos.each(this.filterOne, this);
+  },
+
+  newAttributes: function() {
+    return {
+      title: this.$input.val().trim(), order: app.Todos.nextOrder(), completed: false
+    }; 
+  },
+
 });
