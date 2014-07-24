@@ -40,7 +40,7 @@ app.TodoView = Backbone.View.extend({ //... is a list tag.
       this.model.save({ title: value });
     }
     
-    this.$el.removeClass('editing'); 
+    gitthis.$el.removeClass('editing'); 
   },
   
   // If you hit `enter`, we're through editing the item.

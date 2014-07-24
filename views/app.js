@@ -86,7 +86,9 @@ app.AppView = Backbone.View.extend({
 
   newAttributes: function() {
     return {
-      title: this.$input.val().trim(), order: app.Todos.nextOrder(), completed: false
+      title: this.$input.val().trim(), 
+      order: app.Todos.nextOrder(), 
+      completed: false
     }; 
   },
 
@@ -94,7 +96,6 @@ app.AppView = Backbone.View.extend({
     if ( event.which !== ENTER_KEY || !this.$input.val().trim() ) { 
       return;
     }
-    
     app.Todos.create( this.newAttributes() );
     this.$input.val(''); 
   },
