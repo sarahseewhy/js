@@ -71,10 +71,10 @@ app.AppView = Backbone.View.extend({
 
   // Add all items in the **Todos** collection at once.
   
- 	addAll: function() {}
+ 	addAll: function() {
     this.$('#todo-list').html('');
     app.Todos.each(this.addOne, this);
-  }
+  },
 
   filterOne : function (todo) { 
     todo.trigger('visible');

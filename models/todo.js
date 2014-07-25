@@ -8,8 +8,10 @@ app.Todo = Backbone.Model.extend({
   
 	defaults: {
 	  title: '',
-	  completed: false 
+	  completed: false
 	},
+
+	url: '',
   // Toggle the `completed` state of this todo item.
 	toggle: function() { 
 		this.save({
